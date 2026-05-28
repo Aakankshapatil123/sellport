@@ -3,16 +3,17 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Homewrapper from "./wrappers/Homewrapper";
 
 // create react object
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Homewrapper/>,
+    children: [
+      {
+    path: "",
     element: <Home />
-  },
-  {
-    path:"/dashboard",
-    element: <Dashboard />
   },
   {
     path:"/login",
@@ -21,6 +22,13 @@ const router = createBrowserRouter([
   {
     path:"/register",
     element:<Register />
+  },
+    ]
+  },
+  
+  {
+    path:"/dashboard",
+    element: <Dashboard />
   }
 ])
 

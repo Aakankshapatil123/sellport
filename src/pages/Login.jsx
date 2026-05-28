@@ -4,7 +4,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-     preventDefault();
+     e.preventDefault();
      setTimeout(() => {
       navigate("/dashboard");
      }, 500);
