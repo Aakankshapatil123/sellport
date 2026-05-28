@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,7 +12,8 @@ const Login = () => {
 
   return (
     <div>
-      <form onClick={handleLogin}>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
         <input
         type="text"
         placeholder="Username" 
@@ -25,6 +26,7 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
+      <p>Don't have a account? <Link to="/register">Register</Link></p>
     </div>
   )
 }
