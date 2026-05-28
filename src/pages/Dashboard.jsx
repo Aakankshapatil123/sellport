@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Product from "../components/Product";
 
 const Dashboard = () => {
 
@@ -16,7 +17,9 @@ const Dashboard = () => {
         {
           products
           .map(product => (
-            <li key={product.id}>{product.name}</li>
+            <Product  
+            key={product.id}
+            product={product}/>
           ))
         }
       </ul>
