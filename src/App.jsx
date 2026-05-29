@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Homewrapper from "./wrappers/Homewrapper";
 import productLoaders from "./loaders/productLoaders";
 import ProductDetail from "./pages/ProductDetail";
+import productsLoaders from "./loaders/productsLoaders";
 
 // create react object
 const router = createBrowserRouter([
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
   },
   {
    path: "/product/:id",
-    element: <ProductDetail />
+    element: <ProductDetail />,
+    loader: productsLoaders,
+    hydrateFallbackElement:<p>Loading Products.....</p>
   }
 ])
 
