@@ -1,9 +1,25 @@
 import axios from 'axios';
-import { useLoaderData } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useLoaderData, useSearchParams } from 'react-router';
 
 
 const ProductDetail = () => {
-    const product = useLoaderData();
+    const [product, setProduct] = useState();
+    const id = useSearchParams()[0].get("id")
+
+    const fetchProduct =  async () => {
+    try {
+        const res = await axios.get(`https://6a080eccfa9b27c848fa95f5.mockapi.io/products/${id}`)
+        setProduct(res.data)
+    }catch(error){
+        console.error("Error featching product:", error)
+    }
+      
+}
+
+    useEffect(() => {
+       fetchProduct();
+    }, [])
 
   return (
     <div>
