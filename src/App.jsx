@@ -36,10 +36,10 @@ const router = createBrowserRouter([
     hydrateFallbackElement: <p>Loading Products...</p>
   },
   {
-   path: "/product/:id",
+   path: "/product",
     element: <ProductDetail />,
     loader: productsLoaders,
-    hydrateFallbackElement:<p>Loading Products.....</p>
+    hydrateFallbackElement: <p>Loading Product...</p>
   }
 ])
 
