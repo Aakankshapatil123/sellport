@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../App";
 
@@ -13,9 +13,17 @@ const Login = () => {
       setUser({name: "Krish"})
 
      setTimeout(() => {
+      console.log("user logged in successfuly")
       navigate("/dashboard");
      }, 500);
   }
+
+  // if user is already logged in , redirect to dashbord
+  useEffect(() => {
+    if(user){
+      navigate("/dashboard")
+    }
+  },[user])
 
   return (
     <div>
