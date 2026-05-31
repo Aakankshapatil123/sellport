@@ -1,10 +1,17 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../App";
 
 const Login = () => {
   const navigate = useNavigate();
 
+  const {user, setUser} = useContext(AuthContext); 
+
   const handleLogin = (e) => {
      e.preventDefault();
+
+      setUser({name: "Krish"})
+
      setTimeout(() => {
       navigate("/dashboard");
      }, 500);
